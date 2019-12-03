@@ -5,20 +5,33 @@ import java.util.Scanner;
 public class test_0001 {
 	public static void main(String[] args) {
 		
-Scanner scanner = new Scanner(System.in);
-		
+		String a="",b="",c="";
+		Scanner scanner = new Scanner(System.in);
+		do {
 		try {
 			
 			System.out.print("Enter a : ");
-			int a  = scanner.nextInt();
+			a  = scanner.nextLine();
+			
+			if(a.equalsIgnoreCase("q")) {
+				break;
+			}
 			
 			System.out.print("Enter b : ");
-			int b  = scanner.nextInt();
+			b  = scanner.nextLine();
+			
+			if(b.equalsIgnoreCase("q")) {
+				break;
+			}
 			
 			System.out.print("Enter c : ");
-			int c  = scanner.nextInt();
+			c  = scanner.nextLine();
 			
-			int sum = a+b+c;
+			if(c.equalsIgnoreCase("q")) {
+				break;
+			}
+			
+			int sum = Integer.valueOf(a)+Integer.valueOf(b)+Integer.valueOf(c);	
 			
 			if(sum >=0 && sum <=100) {
 				System.out.println("-------------------------");
@@ -26,15 +39,17 @@ Scanner scanner = new Scanner(System.in);
 								   "b = "+ b + "\n"+
 								   "c = "+ c + "\n"+
 								   "sum = " + sum + "\n"+
-								   "GPA = "+ calculatGPA(sum));
+								   "GPA = "+ calculatGPA(sum)+"\n");
 			}else {
 				System.out.println("value < 0 or > 100");
 			}
 	
 		}catch(Exception e) {
-			System.out.println("Error type");
-			scanner.close();
+			System.out.println("Error type\n");
 		}
+		}while(!a.equalsIgnoreCase("q") || !b.equalsIgnoreCase("q") || !c.equalsIgnoreCase("q"));
+		System.out.println("end");
+		scanner.close();
 	}
 	
 	
