@@ -4,35 +4,36 @@ import java.util.Scanner;
 
 public class test_0001 {
 	public static void main(String[] args) {
-		
+
 		String a="",b="",c="";
 		Scanner scanner = new Scanner(System.in);
+		//1st : change do-while to while, update condition
 		do {
 		try {
-			
+
 			System.out.print("Enter a : ");
 			a  = scanner.nextLine();
-			
+
 			if(a.equalsIgnoreCase("q")) {
 				break;
 			}
-			
+
 			System.out.print("Enter b : ");
 			b  = scanner.nextLine();
-			
+
 			if(b.equalsIgnoreCase("q")) {
 				break;
 			}
-			
+
 			System.out.print("Enter c : ");
 			c  = scanner.nextLine();
-			
+
 			if(c.equalsIgnoreCase("q")) {
 				break;
 			}
-			
-			int sum = Integer.valueOf(a)+Integer.valueOf(b)+Integer.valueOf(c);	
-			
+
+			int sum = Integer.valueOf(a)+Integer.valueOf(b)+Integer.valueOf(c);
+
 			if(sum >=0 && sum <=100) {
 				System.out.println("-------------------------");
 				System.out.println("a = "+ a +"\n"+
@@ -43,7 +44,7 @@ public class test_0001 {
 			}else {
 				System.out.println("value < 0 or > 100");
 			}
-	
+
 		}catch(Exception e) {
 			System.out.println("Error type\n");
 		}
@@ -51,10 +52,10 @@ public class test_0001 {
 		System.out.println("end");
 		scanner.close();
 	}
-	
-	
+
+
 	private static String calculatGPA(int sum) {
-		
+
 		if(sum >= 80 && sum <= 100) {
 			return "A";
 		}else if(sum >= 75 && sum <= 79) {
@@ -74,5 +75,5 @@ public class test_0001 {
 		}
 
 	}
-	
+
 }
