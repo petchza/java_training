@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class test_0001 {
 	public static void main(String[] args) {
 
+		//Datatype should be int
 		String a="",b="",c="";
+		int number = 0;
 		Scanner scanner = new Scanner(System.in);
 		//1st : change do-while to while, update condition
 		do {
