@@ -12,6 +12,8 @@ public class test_0002 {
 
 		//Why using "OR" condition
 		if(number >= 1 || number <= 1000) {
+
+			//define array in java format
 			int array[] = new int[number];
 			for(int i=1 ; i<=number ; i++) {
 				array[i-1] = scanner.nextInt();
