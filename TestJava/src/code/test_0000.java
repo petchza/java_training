@@ -28,6 +28,7 @@ public class test_0000 {
 						break;
 					}
 
+				 //Datatype should be int
 				if(Integer.valueOf(a) >= 0 && Integer.valueOf(a) <= Math.pow(10, 9) && Integer.valueOf(b) >= 0 && Integer.valueOf(b) <= Math.pow(10, 9)) {
 					System.out.println("a + b = "+ (Integer.valueOf(a)+Integer.valueOf(b))+"\n");
 				}else {
