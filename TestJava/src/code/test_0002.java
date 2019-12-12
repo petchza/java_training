@@ -7,30 +7,33 @@ public class test_0002 {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Enter number : ");
-		int number = scanner.nextInt();
+		String q = "";
+		while(!q.equalsIgnoreCase("y")) {
+			System.out.print("Enter number : ");
+			int number = scanner.nextInt();
 
-		//Why using "OR" condition
-		if(number >= 1 || number <= 1000) {
-
-			//define array in java format
-			int array[] = new int[number];
-			for(int i=1 ; i<=number ; i++) {
-				array[i-1] = scanner.nextInt();
-				if(array[i-1] < -2000000000 || array[i-1] > 2000000000) {
-					System.out.println("error length");
-					System.out.println("----------------");
-					scanner.close();
-					return;
+			if (number >= 1 && number <= 1000) {
+				int[] array = new int[number];
+				for (int i = 1; i <= number; i++) {
+					array[i - 1] = scanner.nextInt();
+					if (array[i - 1] < -2000000000 && array[i - 1] > 2000000000) {
+						System.out.println("error length");
+						System.out.println("----------------");
+						scanner.close();
+						return;
+					}
 				}
-			}
-			System.out.println("-------------------");
-			System.out.println("Maximum Value is: "+getMax(array));
-			System.out.println("Minimum Value is: "+getMin(array));
+				System.out.println("-------------------");
+				System.out.println("Maximum Value is: " + getMax(array));
+				System.out.println("Minimum Value is: " + getMin(array));
 
-		}else {
-			System.out.println("Error length number");
+			} else {
+				System.out.println("Error length number");
+			}
+			System.out.println("Do you want to exit?");
+			q = scanner.next();
 		}
+		System.out.println("end");
 		scanner.close();
 	}
 

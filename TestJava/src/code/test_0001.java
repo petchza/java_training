@@ -5,36 +5,21 @@ import java.util.Scanner;
 public class test_0001 {
 	public static void main(String[] args) {
 
-		//Datatype should be int
-		String a="",b="",c="";
-		int number = 0;
 		Scanner scanner = new Scanner(System.in);
-		//1st : change do-while to while, update condition
-		do {
+		String q = "";
+		while(!q.equalsIgnoreCase("y")) {
 		try {
 
 			System.out.print("Enter a : ");
-			a  = scanner.nextLine();
-
-			if(a.equalsIgnoreCase("q")) {
-				break;
-			}
+			int a  = scanner.nextInt();
 
 			System.out.print("Enter b : ");
-			b  = scanner.nextLine();
-
-			if(b.equalsIgnoreCase("q")) {
-				break;
-			}
+			int b  = scanner.nextInt();
 
 			System.out.print("Enter c : ");
-			c  = scanner.nextLine();
+			int c  = scanner.nextInt();
 
-			if(c.equalsIgnoreCase("q")) {
-				break;
-			}
-
-			int sum = Integer.valueOf(a)+Integer.valueOf(b)+Integer.valueOf(c);
+			int sum = (a+b+c);
 
 			if(sum >=0 && sum <=100) {
 				System.out.println("-------------------------");
@@ -50,7 +35,9 @@ public class test_0001 {
 		}catch(Exception e) {
 			System.out.println("Error type\n");
 		}
-		}while(!a.equalsIgnoreCase("q") || !b.equalsIgnoreCase("q") || !c.equalsIgnoreCase("q"));
+		System.out.println("Do you want to exit?");
+		q = scanner.next();
+		}
 		System.out.println("end");
 		scanner.close();
 	}

@@ -6,41 +6,36 @@ public class test_0000 {
 
 	public static void main(String[] args) {
 
-		String a = "";
-		String b = "";
-		Scanner scanner =  null;
-		//1st : change do-while to while, update condition
-		do {
+		Scanner scanner =  new Scanner(System.in);;
+		String q = "";
+		while(!q.equalsIgnoreCase("y")) {
 			try {
-				scanner = new Scanner(System.in);
 
 				System.out.print("Enter a : ");
-				a  = scanner.nextLine();
-
-				if(a.equalsIgnoreCase("q")) {
-					break;
-				}
+				int a  = scanner.nextInt();
 
 				System.out.print("Enter b : ");
-				 b  = scanner.nextLine();
+				int b  = scanner.nextInt();
 
-				 if(b.equalsIgnoreCase("q")) {
-						break;
-					}
-
-				 //Datatype should be int
-				if(Integer.valueOf(a) >= 0 && Integer.valueOf(a) <= Math.pow(10, 9) && Integer.valueOf(b) >= 0 && Integer.valueOf(b) <= Math.pow(10, 9)) {
-					System.out.println("a + b = "+ (Integer.valueOf(a)+Integer.valueOf(b))+"\n");
+				if((a >= 0 && a <= Math.pow(10, 9)) && (b >= 0 && b <= Math.pow(10, 9))) {
+					System.out.println(a+" + "+b+" = "+ plusNumber(a,b)+"\n");
 				}else {
 					System.out.println("Error value.");
 				}
+				
 			}catch(NumberFormatException e) {
 				System.out.println("error type");
 			}
-
-		}while(!a.equalsIgnoreCase("q") || !b.equalsIgnoreCase("q"));
-			System.out.println("end");
+			System.out.println("Do you want to exit?");
+			q = scanner.next();
+		}
+			System.out.println("End");
 			scanner.close();
 
 	}
+	
+	public static int plusNumber(int a, int b) {
+		return a+b;
+	}
+	
 }
