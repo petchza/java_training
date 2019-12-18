@@ -7,19 +7,54 @@ public class test_0005 {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+		DecimalFormat decimalFormat = new DecimalFormat("#.000000");
 		String q = "";
 		while(!q.equalsIgnoreCase("y")) {
-			//Step 1 get input value of type double
-			System.out.print("Enter a : ");
-			double a = scanner.nextDouble();
+
+			System.out.print("Enter a, b or c : ");
+			String value = scanner.next();
 			
-			System.out.print("Enter b : ");
-			double b = scanner.nextDouble();
-			//Step 2 pass value both to method calculate pythagoras
-			double result = calculatePythagoras(a,b);
-			//Step 3 set DecimalFormat for set 6 decimal points and show the result
-			DecimalFormat decimalFormat = new DecimalFormat("#.000000");
-			System.out.println(decimalFormat.format(result));
+			switch(value) {
+			case "a" : { 
+							System.out.print("Enter b : ");
+							double b = scanner.nextDouble();
+							
+							System.out.print("Enter c : ");
+							double c = scanner.nextDouble();
+							
+							double a = calculatePythagorasA(b,c);
+							System.out.println(decimalFormat.format(a));
+							break;
+					   }
+						
+			case "b" :	{
+							System.out.print("Enter a : ");
+				
+							double a = scanner.nextDouble();
+							
+							System.out.print("Enter c : ");
+							double c = scanner.nextDouble();
+							
+							double b = calculatePythagorasB(a,c);
+							System.out.println(decimalFormat.format(b));
+							break;
+						}
+			
+			case "c" :	{
+							System.out.print("Enter a : ");
+							double a = scanner.nextDouble();
+			
+							System.out.print("Enter b : ");
+							double b = scanner.nextDouble();
+							
+							double c = calculatePythagorasC(a,b);
+							System.out.println(decimalFormat.format(c));
+							break;
+						}
+			
+			default : System.out.println("Input value not match!");
+			
+			}
 			
 			System.out.println("Do you want to exit?");
 			q = scanner.next();
@@ -28,7 +63,15 @@ public class test_0005 {
 		scanner.close();
 	}
 
-	private static double calculatePythagoras(double a, double b) {
+	private static double calculatePythagorasC(double a, double b) {
 		return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+	}
+	
+	private static double calculatePythagorasA(double b, double c) {
+		return Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
+	}
+	
+	private static double calculatePythagorasB(double a, double c) {
+		return Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
 	}
 }
