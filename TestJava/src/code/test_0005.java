@@ -16,7 +16,6 @@ public class test_0005 {
 		String q = "";
 		while(!q.equalsIgnoreCase("y")) {
 
-
 			System.out.print("Enter a, b or c : ");
 			String value = scanner.next();
 			
@@ -27,9 +26,8 @@ public class test_0005 {
 							
 							System.out.print("Enter c : ");
 							double c = scanner.nextDouble();
-							
-							double a = calculatePythagorasA(b,c);
-							System.out.println(decimalFormat.format(a));
+
+							System.out.println(decimalFormat.format(calculatePythagorasAOrB(b,c)));
 							break;
 					   }
 						
@@ -41,8 +39,7 @@ public class test_0005 {
 							System.out.print("Enter c : ");
 							double c = scanner.nextDouble();
 							
-							double b = calculatePythagorasB(a,c);
-							System.out.println(decimalFormat.format(b));
+							System.out.println(decimalFormat.format(calculatePythagorasAOrB(a,c)));
 							break;
 						}
 			
@@ -53,14 +50,13 @@ public class test_0005 {
 							System.out.print("Enter b : ");
 							double b = scanner.nextDouble();
 							
-							double c = calculatePythagorasC(a,b);
-							System.out.println(decimalFormat.format(c));
+							System.out.println(decimalFormat.format(calculatePythagorasC(a,b)));
 							break;
 						}
 			
 			default : System.out.println("Input value not match!");
 			}
-			System.out.println("Do you want to exit?");
+			System.out.print("Do you want to exit? (y/n) : ");
 			q = scanner.next();
 		}
 		System.out.println("End");
@@ -71,11 +67,8 @@ public class test_0005 {
 		return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 	}
 	
-	private static double calculatePythagorasA(double b, double c) {
-		return Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
+	private static double calculatePythagorasAOrB(double valueAOrB, double c) {
+		return Math.sqrt(Math.pow(c, 2) - Math.pow(valueAOrB, 2));
 	}
 	
-	private static double calculatePythagorasB(double a, double c) {
-		return Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
-	}
 }
