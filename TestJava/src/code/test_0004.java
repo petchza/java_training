@@ -2,6 +2,7 @@ package code;
 
 import java.util.Scanner;
 
+
 public class test_0004 {
 	public static void main(String[] args) {
 
@@ -10,7 +11,6 @@ public class test_0004 {
 		String q = "";
 		while(!q.equalsIgnoreCase("y")) {
 			try {
-
 			System.out.print("Enter string : ");
 			String input = scanner.next();
 
@@ -38,39 +38,17 @@ public class test_0004 {
 	private static String checkCharacterUpperLowerAndMix(String value) {
 		
 		String result = "";
-		boolean statusUpper =  isUpperCase(value); 
-		boolean statusLower =  isLowerCase(value); 
-			
-			if(statusUpper && !statusLower) {
-				result = "All Capital Letter";
-			}else {
-				if(statusLower) {
-					result = "All Small Letter";
-				}else {
-					result = "Mix";
-				}
-				
-			}		
+	
+		if (value.toUpperCase().equals(value)) { 
+			result = "All Capital Letter";
+		}else if(value.toLowerCase().equals(value)){
+			result = "All Small Letter";
+		}else {
+			result = "Mix";
+		}
+
 		return result;
 	}	
 	
-	private static boolean isUpperCase(String value)
-	{
-	    for(char c : value.toCharArray())
-	    {
-	        if(!Character.isUpperCase(c))
-	            return false;
-	    }
-	    return true;
-	}
-	
-	private static boolean isLowerCase(String value)
-	{
-	    for(char c : value.toCharArray())
-	    {
-	        if(!Character.isLowerCase(c))
-	            return false;
-	    }
-	    return true;
-	}
+
 }
