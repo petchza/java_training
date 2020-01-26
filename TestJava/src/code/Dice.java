@@ -21,8 +21,7 @@ public class Dice {
 					action = getStringAction(scanner,number);
 					statusStringAction = validateStringAction(action,number);
 					if(statusStringAction) {
-						System.out.println(diceAction(action,number));  
-//						diceAction(action,number);
+						diceAction(action,number);
 					}else {
 						System.out.println("Error string action not 1-1000 or value not match 'B,C,D,F,L,R'");
 					}
@@ -40,14 +39,15 @@ public class Dice {
 		scanner.close();
 	}
 
-	private static String diceAction(List<String> action, int number) {
+	private static void diceAction(List<String> action, int number) {
+		System.out.println("---------------------");
 		int result = 0;
 		for (int i = 0; i < number; i++) {
 			String actionString = action.get(i);
 			result = doAction(actionString);
 			System.out.println(result);
 		}
-		return "END";
+		System.out.println("END");
 	}
 	
 	private static int doAction(String actionString) {
@@ -86,7 +86,7 @@ public class Dice {
 					diceTop = diceFont;
 					diceFont = diceBottom;
 					diceBottom = diceBack;
-					diceBack = diceTop;
+					diceBack = tempTop;
 				} 
 				break;
 			}
