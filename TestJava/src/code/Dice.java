@@ -13,14 +13,18 @@ public class Dice {
 		while (!quit.equalsIgnoreCase("y")) {
 			try {
 				List<String> action = new ArrayList<>();
-				
+				//Step 1 get input number
 				System.out.print("Enter number : ");
 				int number = scanner.nextInt();
 				
+				//Step 2 validate number
 				if((number >=1) && (number <=6)) {
+					//Step 3 get string action
 					action = getStringAction(scanner,number);
+					//Step 4 validate string action
 					statusStringAction = validateStringAction(action,number);
 					if(statusStringAction) {
+						//Step 5 action dice
 						diceAction(action,number);
 					}else {
 						System.out.println("Error string action not 1-1000 or value not match 'B,C,D,F,L,R'");
