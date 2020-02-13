@@ -12,14 +12,11 @@ public class Palindrome {
 			String value = scanner.next();
 			
 			if((value.length() >=2) && (value.length() <=200)) {
-				
 				System.out.println(checkPalindrome(value));
-				
 			}else {
 				System.out.println("Error input length.");
 				System.out.println("");
 			}
-			
 			System.out.print("Do you want to exit? (y/n) : ");
 			quit = scanner.next();
 		}
@@ -53,18 +50,27 @@ public class Palindrome {
 	
 	
 	private static String checkTypePalindrome(String value) {
+		String result = "";
+		String valueSetOne = "", valueSetTwo = "";
+		
+		if(value.length() % 2 == 0) {
+			valueSetOne = value.substring(0, (value.length()/2));
+			valueSetTwo = value.substring((value.length()/2), value.length());
+			result = isPalidromeOrDoublePalidromeEven(valueSetOne,valueSetTwo);
+		}else {
+			result = "Double Palindrome";
+		}
+		return result;
+	}
 
-//		if() {
-//			
-//		}
-		
-		
-		return "nextchektype";
+	private static String isPalidromeOrDoublePalidromeEven(String valueSetOne, String valueSetTwo) {
+		String palidrome = "";
+		if((isPalindrome(valueSetOne)) && (isPalindrome(valueSetTwo))) {
+			palidrome = "Double Palindrome";
+		}else {
+			palidrome = "Palindrome";
+		}
+		return palidrome;
 	}
-	
-	
-	private static boolean checkDoublePalindrome(String value) {
-		
-		return false;
-	}
+
 }
